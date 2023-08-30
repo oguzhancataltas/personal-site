@@ -1,0 +1,290 @@
+:root {
+  --borderColor: gray;
+  --bgColor: black;
+  --cardBgColor: #1a1a1a;
+  --textColor: white;
+  --linkHoverColor: aqua;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  background-color: var(--bgColor);
+  color: var(--textColor);
+}
+
+a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--textColor);
+  text-decoration: none;
+}
+
+p {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  height: 7rem;
+  box-shadow: 0 1px 5px var(--borderColor);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+header .navbars {
+  display: flex;
+}
+
+header nav {
+  display: flex;
+  min-height: 100%;
+}
+
+header .all-items {
+  display: flex;
+}
+
+header .nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+header .nav-link {
+  transition: 0.4s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  width: 20rem;
+}
+
+header .nav-link:hover,
+header .planet-icon:hover,
+header .main-link:hover,
+header .dropdown-link:hover {
+  color: var(--linkHoverColor);
+}
+
+header .nav-link:hover + .dropdown-menu,
+header .dropdown-menu:hover {
+  opacity: 1;
+  pointer-events: all;
+}
+
+header .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 6.6rem;
+  min-width: 20rem;
+  padding: 1rem 3rem;
+  border-top: 5px solid var(--linkHoverColor);
+  background-color: var(--bgColor);
+  opacity: 0;
+  pointer-events: none;
+}
+
+header .dropdown-link {
+}
+
+/* main */
+
+/* section - information */
+
+.information {
+  margin: 5rem 15rem;
+}
+
+.information .container {
+}
+
+.information .position-controller {
+  display: flex;
+  justify-content: center;
+}
+
+.information .all-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.information .information-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.information .cards-controller {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.information .card-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--borderColor);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  max-width: 30%;
+  height: auto;
+}
+
+.information .card-img {
+  width: 100%;
+  height: auto;
+}
+
+.information .card-item .images {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.information .card-item .card-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+.information .card-item .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.information .card-item .card-link {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: var(--linkHoverColor);
+}
+
+/* section planet-images */
+
+.planet-images {
+  margin: 0 20rem 10rem 20rem;
+}
+
+.planet-images .planet-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8rem;
+}
+
+.planet-images .all-items {
+}
+
+.images-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.planet-images .image-item {
+  width: 25%;
+  height: auto;
+  position: relative;
+}
+
+.planet-images .image-item img {
+  width: 100%;
+  height: auto;
+}
+
+.planet-images .image-item .hover-link {
+  /* display: none; */
+  position: absolute;
+  background-color: transparent;
+  font-size: 6rem;
+  font-weight: 700;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.planet-images .image-item:hover .hover-link {
+  opacity: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3rem;
+  border-top: 1px solid var(--borderColor);
+  padding: 3rem 0;
+}
+
+@media (width < 1500px) {
+    html {
+      font-size: 9px;
+    }
+  }
+  
+  @media (width < 1200px) {
+    html {
+      font-size: 8px;
+    }
+    .planet-images .image-item {
+      width: 33.33%;
+      height: auto;
+      position: relative;
+    }
+  }
+  
+  @media (width < 900px) {
+    html {
+      font-size: 7px;
+    }
+    .information .card-item {
+        max-width: 45%;
+        height: auto;
+    }
+    .planet-images .image-item {
+        width: 50%;
+        height: auto;
+      }
+}
+  
+  @media (width < 600px) {
+    html {
+      font-size: 6px;
+    }
+    .information .card-item {
+        max-width: 100%;
+        height: auto;
+    }
+    .planet-images .image-item {
+        width: 100%;
+        height: auto;
+      }
+  }
+
+
